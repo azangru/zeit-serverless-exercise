@@ -8,12 +8,15 @@ const html = require('rehype-stringify');
 const frontmatter = require('remark-frontmatter');
 const yaml = require('yaml').parse;
 
+const imagePlugin = require('./markdownImagePlugin');
+
 const parseMarkdown = async (pathToFile) => {
   return await new Promise((resolve, reject) => {
     unified()
       .use(parse)
       .use(frontmatter, ['yaml', 'toml'])
       .use(extract, { yaml: yaml })
+      .use(imagePlugin)
       .use(remark2rehype)
       .use(html)
       .process(vfile.readSync(pathToFile), function(err, file) {
