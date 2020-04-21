@@ -16,7 +16,7 @@ const parseMarkdown = async (pathToFile) => {
       .use(extract, { yaml: yaml })
       .use(remark2rehype)
       .use(html)
-      .process(vfile.readSync(path.resolve(__dirname, `../markdown/${pathToFile}.md`)), function(err, file) {
+      .process(vfile.readSync(pathToFile), function(err, file) {
         if (err) {
           reject(err);
         } else {
