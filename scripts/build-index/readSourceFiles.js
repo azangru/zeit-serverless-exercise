@@ -2,16 +2,14 @@ const fs = require('fs');
 const path = require('path');
 
 const config = require('../../config');
-const parseMarkdown = require('./parseMarkdown');
+const parseFile = require('./parseFile');
 
 const readSourceFiles = async () => {
-  const { articlesPath, videosPath } = config;
+  const { articlesPath } = config;
   const articles = await readFilesFromDir(articlesPath);
-  const videos = await readFilesFromDir(videosPath);
 
   return {
-    articles,
-    videos
+    articles
   };
 };
 
@@ -20,7 +18,7 @@ const readFilesFromDir = async (dir) => {
     .map(async fileName => {
       const slug = fileName.replace(/\.md$/, '');
       const filePath = path.join(dir, fileName);
-      const fileData = await parseMarkdown(filePath);
+      const fileData = await parseFile(filePath);
       return Object.assign({}, fileData, { slug });
     });
   return await Promise.all(promisedData);
