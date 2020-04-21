@@ -3,6 +3,7 @@ parent: viewing-ensembl-data
 tags:
   - browser
   - transcript
+status: published
 ---
 
 # What is Ensembl Select?

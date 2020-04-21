@@ -3,6 +3,7 @@ parent: viewing-ensembl-data
 related-video: genome-browser
 tags:
   - browser
+status: draft
 ---
 
 # Using the Genome Browser

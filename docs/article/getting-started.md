@@ -1,4 +1,5 @@
 ---
+status: published
 ---
 
 # Getting Started

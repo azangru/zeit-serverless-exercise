@@ -1,6 +1,7 @@
 ---
 parent: getting-started
 related-video: select-a-species
+status: published
 ---
 
 # Select a species or assembly
