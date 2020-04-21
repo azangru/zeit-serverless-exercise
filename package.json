@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "now-build": "node ./build.js",
-    "build": "rm -rf ./build && mkdir build && npm run now-build",
+    "local-build": "rm -rf ./build && mkdir build && npm run now-build",
     "start-server": "node server/server.js"
   },
   "keywords": [],

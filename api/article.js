@@ -1,8 +1,10 @@
 const sqlite = require('sqlite');
 const sqlite3 = require('sqlite3');
 
+const config = require('../config');
+
 const getArticleFromDB = require('../scripts/get-from-database/getArticle');
-const databasePath = 'build/database.db';
+const databasePath = process.env.DEPLOYMENT === 'NOW' ? 'build/database.db' : config.databasePath;
 
 const getArticle = async (req, res) => {
   const filePath = req.query.file;

@@ -7,19 +7,17 @@ const getArticleFromDB = require('../scripts/get-from-database/getArticle');
 
 const config = require('../config');
 
-// const articlesIndex = require(config.articlesIndexPath);
-const articlesIndexPath = 'build/indices/articlesIndexName.json';
+const articlesIndexPath = process.env.DEPLOYMENT === 'NOW'
+  ? 'build/indices/articlesIndexName.json'
+  : config.articlesIndexPath;
 const articlesIndex = require(articlesIndexPath);
-const databasePath = 'build/database.db';
+
+const databasePath = process.env.DEPLOYMENT === 'NOW'
+  ? 'build/database.db'
+  : config.databasePath;
 
 module.exports = async (req, res) => {
   let index;
-  // try {
-  //   index = require('build/indices/index.json');
-  // } catch (error) {
-  //   const files = fs.readdirSync('.');
-  //   res.json({ error, files });
-  // }
 
   const { query } = req.query;
   if (!query) {
@@ -30,7 +28,6 @@ module.exports = async (req, res) => {
   }
 
   const searchResults = searchIndex(query, articlesIndex);
-  console.log('searchResults', searchResults);
 
   try {
     const db = await sqlite.open({
