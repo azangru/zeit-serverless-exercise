@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "now-build": "node ./build.js",
+    "now-build": "mkdirp build && node ./build.js",
     "local-build": "rm -rf ./build && mkdir build && npm run now-build",
     "start-server": "node server/server.js"
   },
