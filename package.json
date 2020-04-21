@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "now-build": "node ./build.js",
-    "start-server": ""
+    "start-server": "node server/server.js"
   },
   "keywords": [],
   "author": "",

@@ -1,10 +1,10 @@
 const express = require('express');
 const app = express();
 
-const getOne = require('../api/document');
+const getArticle = require('../api/article');
 const search = require('../api/search');
 
-app.use('/api/document', getOne);
+app.use('/api/article', getArticle);
 app.use('/api/search', search);
 
 module.exports = app;

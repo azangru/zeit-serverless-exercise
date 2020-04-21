@@ -1,10 +1,10 @@
 const sqlite = require('sqlite');
 const sqlite3 = require('sqlite3');
 
-const { getOneDocument } = require('../scripts/getFromDatabase');
+const getArticleFromDB = require('../scripts/get-from-database/getArticle');
 const databasePath = 'build/database.db';
 
-const getOne = async (req, res) => {
+const getArticle = async (req, res) => {
   const filePath = req.query.file;
   if (!filePath) {
     res.status(400);
@@ -18,7 +18,7 @@ const getOne = async (req, res) => {
       filename: databasePath,
       driver: sqlite3.Database
     });
-    const match = await getOneDocument(db, filePath);
+    const match = await getArticleFromDB(db, filePath);
 
     if (match) {
       res.json({
@@ -42,4 +42,4 @@ const getOne = async (req, res) => {
   }
 };
 
-module.exports = getOne;
+module.exports = getArticle;
