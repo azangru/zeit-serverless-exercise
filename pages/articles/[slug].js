@@ -1,12 +1,12 @@
+import React from 'react';
+
 const sqlite = require('sqlite');
 const sqlite3 = require('sqlite3');
 const path = require('path');
 
-
 const config = require('../../config');
 
 const ArticlePage = (props) => {
-  console.log('props', props);
   return <div>Welcome to Next.js!</div>
 }
 
