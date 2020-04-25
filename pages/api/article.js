@@ -3,11 +3,9 @@ const sqlite3 = require('sqlite3');
 const fs = require('fs');
 const path = require('path');
 
-const config = require('../config');
+const database = fs.readFileSync(path.resolve(process.env.ROOT, 'build', 'database.db'));
 
-const database = fs.readFileSync(path.join(__dirname, '../build', 'database.db'));
-
-// const getArticleFromDB = require('../scripts/get-from-database/getArticle');
+const getArticleFromDB = require('../../scripts/get-from-database/getArticle');
 // const databasePath = process.env.DEPLOYMENT === 'NOW' ? 'build/database.db' : config.databasePath;
 
 const getArticle = async (req, res) => {
@@ -21,7 +19,7 @@ const getArticle = async (req, res) => {
 
   try {
     const db = await sqlite.open({
-      filename: path.join(__dirname, '../build', 'database.db'),
+      filename: path.resolve(process.env.ROOT, 'build', 'database.db'),
       driver: sqlite3.Database
     });
     const match = await getArticleFromDB(db, filePath);
