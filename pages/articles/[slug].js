@@ -2,9 +2,6 @@ const sqlite = require('sqlite');
 const sqlite3 = require('sqlite3');
 const path = require('path');
 
-const getConfig = require('next/config');
-console.log(getConfig.default());
-const { serverRuntimeConfig } = getConfig.default();
 
 const config = require('../../config');
 
@@ -15,9 +12,7 @@ const ArticlePage = (props) => {
 
 export default ArticlePage;
 
-const databasePath = path.resolve(serverRuntimeConfig.PROJECT_ROOT, 'build/database.db');
-console.log('databasePath', databasePath);
-
+const databasePath = path.resolve(process.env.ROOT, 'build/database.db');
 export const getStaticPaths = async () => {
   const db = await sqlite.open({
     filename: databasePath,
@@ -25,7 +20,7 @@ export const getStaticPaths = async () => {
   });
   const articleSlugs = await db.all('SELECT filename FROM articles');
 
-  const paths = articleSlugs.map(slug => `/articles/${slug}`);
+  const paths = articleSlugs.map(({ filename }) => `/articles/${filename}`);
 
   // We'll pre-render only these paths at build time.
   // { fallback: false } means other routes should 404.

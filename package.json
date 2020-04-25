@@ -4,11 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "now-build": "mkdirp build && node ./build.js",
-    "local-build": "rm -rf ./build && mkdir build && npm run now-build",
+    "prebuild": "npm run build-static",
+    "build-static": "rm -rf ./build ./public && mkdirp build public && node ./build.js && cp -r images/ public",
     "start-server": "node server/server.js",
     "dev": "next",
-    "build-next": "next build"
+    "build": "next build",
+    "start": "next start"
   },
   "keywords": [],
   "author": "",
