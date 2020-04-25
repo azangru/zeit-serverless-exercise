@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "mkdirp build && node ./build.js && npm run eleventy-build",
+    "build": "rm -rf ./build && mkdirp build && node ./build.js && npm run eleventy-build",
     "local-build": "rm -rf ./build && mkdir build && npm run now-build",
     "start-server": "node server/server.js",
     "eleventy-clean": "rm -rf _site",
