@@ -2,6 +2,10 @@ const util = require('util');
 
 module.exports = function(config) {
   config.addLayoutAlias('default', 'layouts/default.njk');
+  config.addLayoutAlias('with_video', 'layouts/with_video.njk');
+
+  config.addPassthroughCopy('eleventy-site/css');
+  config.addPassthroughCopy('images');
 
   return {
     dir: {
