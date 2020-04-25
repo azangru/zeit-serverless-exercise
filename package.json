@@ -4,23 +4,22 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "now-build": "mkdirp build && node ./build.js",
+    "now-build": "mkdirp build && mkdirp public && node ./build.js && npm run eleventy-build && cp -r ./_site/* ./public",
     "local-build": "rm -rf ./build && mkdir build && npm run now-build",
     "start-server": "node server/server.js",
-    "dev": "next",
-    "build-next": "next build"
+    "eleventy-clean": "rm -rf _site",
+    "start-eleventy": "npm run eleventy-clean && eleventy --serve",
+    "eleventy-build": "eleventy"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@11ty/eleventy": "0.10.0",
     "cross-fetch": "3.0.4",
     "express": "4.17.1",
     "lunr": "2.3.8",
     "mkdirp": "1.0.4",
-    "next": "9.3.5",
-    "react": "16.13.1",
-    "react-dom": "16.13.1",
     "rehype-raw": "4.0.2",
     "rehype-stringify": "7.0.0",
     "remark-extract-frontmatter": "2.0.2",
