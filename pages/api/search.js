@@ -1,20 +1,19 @@
 // const fs = require('fs');
 const sqlite = require('sqlite');
 const sqlite3 = require('sqlite3');
+const fs = require('fs');
+const path = require('path');
 
-const searchIndex = require('../scripts/searchIndex');
-const getArticleFromDB = require('../scripts/get-from-database/getArticle');
+const searchIndex = require('../../scripts/searchIndex');
+const getArticleFromDB = require('../../scripts/get-from-database/getArticle');
 
-const config = require('../config');
+const config = require('../../config');
 
-const articlesIndexPath = process.env.DEPLOYMENT === 'NOW'
-  ? 'build/indices/articlesIndex.json'
-  : config.articlesIndexPath;
-const articlesIndex = require(articlesIndexPath);
+const databasePath = path.resolve(process.env.ROOT, 'build', 'database.db');
+const database = fs.readFileSync(databasePath);
 
-const databasePath = process.env.DEPLOYMENT === 'NOW'
-  ? 'build/database.db'
-  : config.databasePath;
+const articlesIndexPath = path.resolve(process.env.ROOT, 'build/indices/articlesIndex.json')
+const articlesIndex = JSON.parse(fs.readFileSync(articlesIndexPath), 'utf-8');
 
 module.exports = async (req, res) => {
   let index;
