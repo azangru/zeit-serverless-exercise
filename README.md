@@ -13,10 +13,10 @@ From Ensembl user's perspective, there are two distinct types of documentation. 
 
 For the purposes of this prototype, both types of documentation are written in the same way. If this prototypes gets the go-ahead, we may decide to split these types of documentation into separate folders.
 
-**Note:** In this prototype, the file `docs/article/select-a-species.md` provides contextual help for Species Selector page, and the file `docs/article/using-the-genome-browser.md` provides contextual help for Genome Browser page.
-
 # How to author content
-The prototype can handle two types of content: articles and videos. All content should be stored as markdown files in the `docs/article` or `docs/video` folder.
+The prototype can handle two types of content: articles and videos. All content should be stored as markdown files in the `docs/article` or `docs/video` folder. You can create new markdown files in these folders, or edit the existing ones.
+
+**Note:** In this prototype, the file `docs/article/select-a-species.md` provides contextual help for Species Selector page, and the file `docs/article/using-the-genome-browser.md` provides contextual help for Genome Browser page.
 
 # How to integrate images into content
 Save image files to the `images` folder, and then add links to them in the body of appropriate markdown files, starting the path from the root of the project.
