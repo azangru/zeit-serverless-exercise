@@ -5,8 +5,10 @@
   "main": "index.js",
   "scripts": {
     "clean": "rm -rf ./build _site",
-    "prebuild": "npm run clean",
-    "build": "mkdirp build && node ./build.js && npm run eleventy-build",
+    "now-build": "mkdirp build && node ./build.js",
+    "build": "npm run eleventy-build",
+    "prelocal-build": "npm run clean",
+    "local-build": "mkdirp build && node ./build.js && npm run eleventy-build",
     "start-server": "node server/server.js",
     "eleventy-clean": "rm -rf _site",
     "start-eleventy": "npm run eleventy-clean && eleventy --serve",
