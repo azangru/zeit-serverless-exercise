@@ -85,7 +85,11 @@ Notice how:
 (See `docs/article/ensembl-select.md` as an example of mixing of such syntax).
 
 # How to publish content
-Push committed changes to this repository. A build script will run automatically, and a bot will post a comment to your commit, notifying you whether your changes have been deployed successfully. In case of a successful deployment, it will also provide links to where the code has been deployed.
+Push committed changes to the master branch of this repository. A build script will run automatically, and a bot will post a comment to your commit, notifying you whether your changes have been deployed successfully. In case of a successful deployment, it will also provide links to where the code has been deployed.
+
+A push to master will make the changes available at https://zeit-serverless-exercise.now.sh (see below). You can also push to your own branches, in which case the bot will still deploy your changes and report to you in a comment to your commit the urls where the changes got deployed. Notice that the hostname in the urls will be slightly different; so in order to check your changes you will have to use this modified url.
+
+No changes to branches other than master will be visible in contextual help on Ensembl website.
 
 # How to verify the result of your changes
 
