@@ -11,12 +11,12 @@ From Ensembl user's perspective, there are two distinct types of documentation. 
 - Contextual help will be shown in various popups on application screens of the Ensembl site. For example, a popup will appear if you click on the top-right help element on the Species Selector or Genome Browser page
 - Standalone documentation will appear on dedicated documentation pages.
 
-For the purposes of this prototype, both types of documentation are written in the same way. If this prototypes gets the go-ahead, we may decide to split these types of documentation into separate folders.
+For the purposes of this prototype, both types of documentation are written in the same way. If this prototype gets the go-ahead, we may decide to split these types of documentation into separate folders.
 
 # How to author content
 The prototype can handle two types of content: articles and videos. All content should be stored as markdown files in the `docs/article` or `docs/video` folder. You can create new markdown files in these folders, or edit the existing ones.
 
-**Note:** In this prototype, the file `docs/article/select-a-species.md` provides contextual help for Species Selector page, and the file `docs/article/using-the-genome-browser.md` provides contextual help for Genome Browser page.
+**Note:** In this prototype, the file `docs/article/select-a-species.md` provides contextual help for the Species Selector page, and the file `docs/article/using-the-genome-browser.md` provides contextual help for the Genome Browser page.
 
 # How to integrate images into content
 Save image files to the `images` folder, and then add links to them in the body of appropriate markdown files, starting the path from the root of the project.
@@ -37,7 +37,7 @@ _(See `docs/article/select-a-species.md` for the reference)_.
 **Note:** We are currently supporting only one video per article using this approach. This is a limitation that we will be able to overcome if needed.
 
 ## Option 2: Simply add iframe html code in the markdown file
-This is an example of using an escape hatch when authoring markdown files. If you do not need to associate any metadata with a video, but simply want to add it inside your article, you can do so by adding raw `iframe` html element inside the body of your article. For example:
+This is an example of using an escape hatch when authoring markdown files. If you do not need to associate any metadata with a video, but simply want to add it inside your article, you can do so by adding raw `iframe` html elements inside the body of your article. For example:
 
 ```
 Here is my first paragraph, right before the video.
@@ -50,7 +50,7 @@ Here is my second paragraph, right after the video.
 For more details about this approach, see the **Escape hatch** section below.
 
 # Escape hatch for content creators: writing HTML inside markdown
-Markdown is a great writing tool, but it may be somewhat missing in the formatting department. If you really need to add some extra html markup or CSS styling to specific parts of your articles (this is an extra power, so should be used sparingly, if ever), you can do so by switching to raw html.
+Markdown is a great writing tool, but it may be somewhat lacking in the formatting department. If you really need to add some extra html markup or CSS styling to specific parts of your articles (this is an extra power, so should be used sparingly, if ever), you can do so by switching to raw html.
 
 Here is an example of mixing Markdown with HTML in Markdown files:
 
@@ -107,7 +107,7 @@ Note: For the purposes of this prototype, only the two above articles are associ
 ## On the documentation website prototype
 _Note: this is currently very, very basic. Please do not be alarmed by the lack of styling. The point of this exercise is only to make sure that the content has been successfully deployed as expected_
 
-Visit https://zeit-serverless-exercise.now.sh, where you will see a list of links with file names of your articles. Click on a link, and explore the page.
+Visit https://zeit-serverless-exercise.now.sh, where you will see a list of links with file names of your articles. Click on a link, and explore the page. This workflow simulates your experience with writing standalone help pages.
 
 Articles that have `related-video` field in their frontmatter will be displayed differently from the articles that don't (example of an article that does is `select-a-species`).
 
