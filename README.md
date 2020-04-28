@@ -127,4 +127,4 @@ Please take a look at [Microsoft's repository for Azure docs](https://github.com
 
 ## How will this solution enable linking between content nodes
 
-Each content node is a file. Links to other files will be added to article metadata, either in the frontmatter of markdown files themselves (see, for example, the `parent` or the `related-video` fields example markdown files in the `docs` folder), or in individual yaml files (see `TOC.yml` or `index.yml` files in the Microsoft Azure docs repo).
+Each content node is a file. Links to other files will be added to article metadata, either in the frontmatter of markdown files themselves (see, for example, the `parent` or the `related-video` fields example markdown files in the `docs` folder), or in individual yaml files (see `TOC.yml` or `index.yml` files in the Microsoft Azure docs repo). It should also be possible to cross-link articles directly in the body of markdown itself.
