@@ -1,4 +1,5 @@
 ---
+title: Using Ensembl
 status: published
 ---
 

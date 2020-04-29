@@ -1,4 +1,5 @@
 ---
+title: Viewing Ensembl data
 parent: using-ensembl
 status: published
 ---

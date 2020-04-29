@@ -1,4 +1,5 @@
 ---
+title: Select a species or assembly
 parent: getting-started
 related-video: select-a-species
 status: published

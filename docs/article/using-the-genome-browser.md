@@ -1,4 +1,5 @@
 ---
+title: Using the Genome Browser
 parent: viewing-ensembl-data
 related-video: genome-browser
 tags:

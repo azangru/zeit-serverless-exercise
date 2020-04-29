@@ -1,4 +1,5 @@
 ---
+title: What is Ensembl Select?
 parent: viewing-ensembl-data
 tags:
   - browser
